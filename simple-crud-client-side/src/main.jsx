@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import App from './App';
 import Users from './Components/users';
+import Update from './Components/Update';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
     path:'/users',
     element:<Users></Users>,
     loader : async () => fetch('http://localhost:5000/users')
+  },
+  {
+    path:'/update/:id',
+    element:<Update></Update>,
+    loader:({params})=>fetch(`http://localhost:5000/users/${params.id}`) //params.id,,,here id is /update/id..
   }
 ]);
 
