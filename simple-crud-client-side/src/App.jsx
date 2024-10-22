@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import './App.css'
 
 function App() {
@@ -34,6 +35,9 @@ body:JSON.stringify(user)
   return (
     <>
 <h2 className='text-3xl font-bold flex justify-center items-center my-10'>Simple crud </h2>
+<div className='flex items-center justify-center'>
+<Link to={'/users'} ><button className='text-3xl font-bold  my-4 border-2 p-2 bg-gray-500 rounded-xl hover:bg-green-500'>All users </button></Link>
+</div>
 
 <form className='grid grid-cols-1 w-1/3 mx-auto gap-4' onSubmit={handleAddUser}>
   <input className='border-2' type="text" placeholder='name' name='name' />
